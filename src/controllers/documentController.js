@@ -6,11 +6,6 @@ import fs from "fs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/**
- * Handles document verification requests
- * @param {Object} req - Express request object
- * @param {Object} res - Express response object
- */
 export const verifyDocument = async (req, res) => {
   let responseWasSent = false;
 

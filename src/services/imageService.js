@@ -3,11 +3,6 @@ import path from "path";
 import sharp from "sharp";
 import crypto from "crypto";
 
-/**
- * Calculate image hash using perceptual hashing
- * @param {string} imagePath Path to the image
- * @returns {Promise<string>} Image hash
- */
 const calculateImageHash = async (imagePath) => {
   try {
     // Read and resize image to 8x8
@@ -30,12 +25,6 @@ const calculateImageHash = async (imagePath) => {
   }
 };
 
-/**
- * Calculate similarity between two hashes
- * @param {string} hash1 First hash
- * @param {string} hash2 Second hash
- * @returns {number} Similarity percentage
- */
 const calculateSimilarity = (hash1, hash2) => {
   let similar = 0;
   for (let i = 0; i < hash1.length; i++) {
@@ -44,12 +33,6 @@ const calculateSimilarity = (hash1, hash2) => {
   return (similar / hash1.length) * 100;
 };
 
-/**
- * Compare an uploaded image with all genuine images
- * @param {string} uploadedImagePath Path to the uploaded image
- * @param {string} genuineImagesDir Directory containing genuine images
- * @returns {Promise<Object>} Comparison results
- */
 export const compareImages = async (uploadedImagePath, genuineImagesDir) => {
   try {
     console.log("Starting image comparison process");
